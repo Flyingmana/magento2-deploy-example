@@ -1,5 +1,24 @@
-/project-community-edition/*
-!/project-community-edition/composer.json
-!/project-community-edition/composer.lock
+/project-community-edition/bin
+/project-community-edition/dev
+/project-community-edition/generated
+/project-community-edition/lib
+/project-community-edition/phpserver
+/project-community-edition/pub
+/project-community-edition/setup
+/project-community-edition/update
+/project-community-edition/var
+/project-community-edition/.*
+/project-community-edition/*.sample
+/project-community-edition/*.md
+/project-community-edition/*.txt
+/project-community-edition/index.php
+/project-community-edition/app/*.php
+/project-community-edition/app/.*
+/project-community-edition/app/etc/*.xml
+/project-community-edition/app/etc/vendor*
+/project-community-edition/app/etc/NonComposer*
+/project-community-edition/app/etc/env.php
+/docker/tools/ssh/
+/docker/tools/composer/auth.json
 
 
