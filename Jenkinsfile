@@ -17,7 +17,10 @@ pipeline {
     }
     stage('build code') {
         steps {
-            sh './project-community-edition/bin/magento setup:static-content:deploy --strategy=standard -f'
+#            sh './project-community-edition/bin/magento setup:static-content:deploy --strategy=standard -f'
+#[BadMethodCallException]                                                 
+#   Missing required argument $sources of Magento\Deploy\Source\SourcePool
+#
             sh 'php ./project-community-edition/bin/magento setup:di:compile'
         }
     }
