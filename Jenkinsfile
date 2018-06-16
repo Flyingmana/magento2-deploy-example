@@ -17,7 +17,7 @@ pipeline {
     }
     stage('build code') {
         steps {
-            sh './project-community-edition/bin/magento setup:static-content:deploy -f'
+            sh './project-community-edition/bin/magento setup:static-content:deploy --strategy=standard -f'
             sh 'php ./project-community-edition/bin/magento setup:di:compile'
         }
     }
