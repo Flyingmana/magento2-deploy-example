@@ -15,6 +15,12 @@ pipeline {
             sh 'php bin/install_main.php'
         }
     }
+    stage('build code') {
+        steps {
+            sh './bin/magento setup:static-content:deploy -f'
+            sh 'php ./bin/magento setup:di:compile'
+        }
+    }
     stage('placeholder') {
         steps {
             sh 'php ./project-community-edition/bin/magento'
