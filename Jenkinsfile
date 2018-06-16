@@ -6,7 +6,7 @@ pipeline {
         steps {
             checkout scm
             sh 'php --version'
-            php bin/install_main.php
+            sh 'php bin/install_main.php'
         }
     }
     stage('placeholder') {
