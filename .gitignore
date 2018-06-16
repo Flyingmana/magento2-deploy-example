@@ -1,0 +1,5 @@
+/project-community-edition/*
+!/project-community-edition/composer.json
+!/project-community-edition/composer.lock
+
+
