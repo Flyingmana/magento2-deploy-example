@@ -26,5 +26,11 @@ pipeline {
             sh 'php ./project-community-edition/bin/magento'
         }
     }
+    stage('build artifact') {
+        steps {
+            sh 'tar -cvjSf magento-pipeline-deploy.tar.bz2 ./'
+            archiveArtifacts 'magento-pipeline-deploy.tar.bz2'
+        }
+    }
   }
 }
