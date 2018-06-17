@@ -28,8 +28,8 @@ pipeline {
     }
     stage('build artifact') {
         steps {
-            sh 'tar -cvjSf magento-pipeline-deploy.tar.bz2 ./'
-            archiveArtifacts 'magento-pipeline-deploy.tar.bz2'
+            sh 'tar --exclude=artefacts -cjSf artefacts/magento-pipeline-deploy.tar.bz2 ./'
+            archiveArtifacts 'artefacts/magento-pipeline-deploy.tar.bz2'
         }
     }
   }
