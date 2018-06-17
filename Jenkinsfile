@@ -5,6 +5,7 @@ pipeline {
   environment {
     MAGENTO_PACKAGES__DOMAIN__COM_USERNAME = credentials('magento-repo-username')
     MAGENTO_PACKAGES__DOMAIN__COM_PASSWORD = credentials('magento-repo-password')
+    MAGENTO_ARTIFACT_HOST = credentials('ssh_magento2_artifact_host')
   }
   stages {
     stage('fetch dependencies') {
@@ -30,6 +31,7 @@ pipeline {
         steps {
             sh 'tar --exclude=artefacts -cjSf artefacts/magento-pipeline-deploy.tar.bz2 ./'
             archiveArtifacts 'artefacts/magento-pipeline-deploy.tar.bz2'
+            sh 'scp artefacts/magento-pipeline-deploy.tar.bz2 root@$MAGENTO_ARTIFACT_HOST:/$BUILD_TAG-magento-pipeline-deploy.tar.bz2'
         }
     }
   }
